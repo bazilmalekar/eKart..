@@ -1,0 +1,83 @@
+.home{
+    @include defaultHomePage;
+}
+
+.heading{
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.products{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+    flex-wrap: wrap;
+}
+
+.products a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.products a:hover {
+    color: inherit;
+}
+
+.products_container{
+    margin: 1rem;
+    width: 20rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px 1px #818181;
+    cursor: pointer;
+    transition: box-shadow 0.25s;
+}
+
+.products_container:hover{
+    box-shadow: 0 10px 15px 2px #828282;
+}
+
+.products_container .img_div{
+    width: 100%;
+    height: 12rem;
+}
+
+.products_container .img_div img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: fill;
+}
+
+.products_container .product_description{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+}
+
+.products_container .add_to_cart_btn{
+    text-align: center;
+    background-color: #fff;
+    cursor: default;
+}
+
+.products_container .add_to_cart_btn button{
+    margin-bottom: 0.5rem;
+    width: 75%;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+}
+
+.spinner .spinner_chi{
+    width: 5rem;
+    height: 5rem;
+}

@@ -1,0 +1,7 @@
+@mixin defaultHomePage {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 92vh;
+        background-color: rgb(201, 236, 255);
+}
