@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import Cart from "./components/Cart";
 import View from "./components/View";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path="/home" element={<Home />} /> 
         <Route path="/cart/" element={<Cart />} />  
-        <Route path="/view/:id" element={<View />} />     
+        <Route path="/view/:id" element={<View />} /> 
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Register />} />     
       </Routes>
     </>
   );

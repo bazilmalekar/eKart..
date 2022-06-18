@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
 import {NavLink} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import {useNavigate} from "react-router-dom";
 import { addToCart, removeFromCart, decreaseQuantity, clearCart, subtotal } from "../services/cartSlice";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 const Cart = () => {
   const cartData = useSelector((state) => state.cartSlice);
+  const auth = useSelector((state) => state.auth);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(subtotal());
   }, [cartData, dispatch]);
+
   return (
     <div className="cart">
       <h1>Cart</h1>
@@ -70,6 +74,17 @@ const Cart = () => {
               <div className="cart_subtotal_div_content">
                 <h4>Subtotal: ₹{cartData.totalCartAmount}</h4>
                 <p>Inclusive of all taxes</p>
+                {
+                  auth._id ? (
+                    <>
+                      <button className="custom_login_btn">Checkout</button>
+                    </>
+                  ) : (
+                    <>
+                      <button className="custom_login_navigate_btn" onClick={() => navigate("/login")}>Login to check out</button>                      
+                    </>
+                  )
+                }
                 <NavLink to="/"><button className="custom_button"><h5><KeyboardBackspaceIcon />Continue Shopping</h5></button></NavLink> 
               </div>                           
             </div>                

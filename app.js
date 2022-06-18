@@ -2,6 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./db/conn");
 const cors = require("cors");
+const register = require("./router/register");
+const login = require("./router/login");
 const app = express();
 
 app.use(cors());
@@ -16,6 +18,8 @@ const products = require("./model/userShcema");
 app.use(express.json());
 
 app.use(require("./router/auth"));
+app.use("/register", register);
+app.use("/login", login);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static("client/build"));
